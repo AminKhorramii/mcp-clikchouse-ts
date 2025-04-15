@@ -1,0 +1,66 @@
+{
+    "name": "clickhouse-mcp",
+    "version": "0.1.1",
+    "description": "An MCP server for ClickHouse in TypeScript",
+    "main": "dist/index.js",
+    "author": "Amin khorrami. (https://amin.contact/)",
+    "type": "module",
+    "types": "dist/index.d.ts",
+    "bin": {
+        "clickhouse-mcp": "./dist/index.js"
+    },
+    "scripts": {
+        "build": "tsc",
+        "clean": "rimraf dist",
+        "prebuild": "npm run clean",
+        "start": "node dist/index.js",
+        "dev": "ts-node --esm src/index.ts",
+        "test": "jest",
+        "lint": "eslint src/**/*.ts",
+        "docker:build": "docker build -t mcp-clickhouse-ts ."
+    },
+    "dependencies": {
+        "@clickhouse/client": "^0.2.0",
+        "@modelcontextprotocol/sdk": "^1.9.0",
+        "csv-parse": "^5.5.0",
+        "csv-stringify": "^6.4.0",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "uuid": "^9.0.1",
+        "zod": "^3.24.2"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.20",
+        "@types/jest": "^29.5.5",
+        "@types/node": "^20.8.6",
+        "@types/uuid": "^9.0.5",
+        "eslint": "^8.51.0",
+        "jest": "^29.7.0",
+        "ts-jest": "^29.1.1",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.2.2"
+    },
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "keywords": [
+        "clickhouse",
+        "mcp",
+        "claude",
+        "anthropic",
+        "database",
+        "text-to-sql",
+        "file",
+        "sql"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aminkhorramii/mcp-clickhouse-ts.git"
+    },
+    "license": "MIT"
+}
